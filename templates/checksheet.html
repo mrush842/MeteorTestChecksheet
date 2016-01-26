@@ -1,0 +1,32 @@
+<template name="checksheet">
+
+    <table style="width:40%">
+        <tr>
+            <th>Class Name</th>
+            <th>Number</th>
+        </tr>
+
+        {{#each class}}
+        <tr>
+            <td class="class {{selectedClass}}">{{className}}</td>
+            <td class="class {{selectedClass}}">{{classNumber}}</td>
+        </tr>
+        {{/each}}
+    </table>
+
+
+    <br />
+    {{#if showSelectedClass}}
+        <p>{{> removeClass}} Selected Class: {{showSelectedClass.className}}</p>
+    {{else}}
+        <p>Click on class to delete.</p>
+    {{/if}}
+
+    <p>To edit a class, delete entry then re-enter class.</p>
+
+     <!--add to if to hide unless selected -->
+    <p></p>
+    {{> addClass}}
+    {{> defaultClass}}
+
+</template>
